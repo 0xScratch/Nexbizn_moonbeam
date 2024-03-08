@@ -16,9 +16,9 @@ contract NexNFT is ERC721, ERC721URIStorage, ERC721Burnable {
         owner = msg.sender;
     }
 
-    function safeMint(string memory uri) public {
+    function safeMint(address to, string memory uri) public {
         uint256 tokenId = _nextTokenId++;
-        _safeMint(owner, tokenId);
+        _safeMint(to, tokenId);
         _setTokenURI(tokenId, uri);
     }
 
@@ -40,5 +40,9 @@ contract NexNFT is ERC721, ERC721URIStorage, ERC721Burnable {
         returns (bool)
     {
         return super.supportsInterface(interfaceId);
+    }
+
+    function prevTokenId() external view returns(uint){
+        return _nextTokenId - 1;
     }
 }
