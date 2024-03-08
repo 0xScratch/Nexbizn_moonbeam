@@ -1,13 +1,3 @@
-# Sample Hardhat Project
+# Nexbizn: Own Your Brand's Digital Legacy
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
-
-Try running some of the following tasks:
-
-```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat run scripts/deploy.js
-```
+***Nexbizn*** is a revolutionary platform built on **Moonbeam**, a parachain of the Polkadot blockchain, empowering brands to harness the power of NFTs for impactful marketing campaigns.
