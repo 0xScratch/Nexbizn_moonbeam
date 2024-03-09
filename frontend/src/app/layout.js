@@ -1,7 +1,7 @@
-import { Inter } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
 import { fonts } from "./fonts";
+import Navbar from "@/components/Navbar";
 
 
 export const metadata = {
@@ -11,9 +11,12 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={fonts.rubik.variable}>
-      <body>
-        <Providers>{children}</Providers>
+    <html lang="en">
+      <body className="bg-[#201629]">
+        <Providers>
+          <Navbar />
+          {children}
+        </Providers>
       </body>
     </html>
   );
