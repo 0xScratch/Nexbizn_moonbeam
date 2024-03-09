@@ -30,3 +30,9 @@ main().catch((error) => {
   console.error(error);
   process.exitCode = 1;
 });
+
+```
+NexToken deployed to: 0x0E6F513B2DfE36A3d922Db804f3568669679d911
+NexNFT deployed to: 0x582007F4269981CbBD6106f3fa99f4579B0A7287
+Auction deployed to: 0xB284EeFB59823d36B81f88d45c71B4d98a99aE34
+```
