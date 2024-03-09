@@ -5,7 +5,9 @@ import React from 'react';
 import { Image } from '@chakra-ui/next-js';
 import { Flex, Spacer } from '@chakra-ui/react'
 import { Button, ButtonGroup } from '@chakra-ui/react'
-import { Tabs, TabList, TabPanels, Tab, TabPanel, TabIndicator } from '@chakra-ui/react'
+import { Tabs, TabList, Tab, TabIndicator } from '@chakra-ui/react'
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
 
 const Navbar = () => {
     const { activateBrowserWallet, deactivate, account } = useEthers();
@@ -15,51 +17,68 @@ const Navbar = () => {
         if (account) deactivate();
         else activateBrowserWallet();
     }
-    console.log(account)
+    // console.log(account)
+
+    const [tabIndex, setTabIndex] = useState(0);
+    // console.log(localStorage.getItem('tabIndex'))
+
+    // Load the tab index from localStorage when the component mounts
+    useEffect(() => {
+        const savedTabIndex = localStorage.getItem('tabIndex');
+        console.log(savedTabIndex)
+        if (savedTabIndex) {
+        setTabIndex(Number(savedTabIndex));
+        }
+    }, []);
+        
+    const handleTabsChange = (index) => {
+        localStorage.setItem('tabIndex', index);
+        console.log(index)
+        setTabIndex(index);
+    }
 
     return (
-        <Flex direction={'row'}>
-            <Flex className="logo" justify='center' marginRight='81'>
-                <Image 
-                    src="/logo.png" 
-                    alt="NexBizn"
-                    width={130}
-                    height={70} 
-                />
+        <nav className='bg-[#201629]'>
+            <Flex direction={'row'}>
+                <Flex className="logo" justify='center' marginRight='81'>
+                    <Image 
+                        src="/logo.png" 
+                        alt="NexBizn"
+                        width={130}
+                        height={70} 
+                        />
+                </Flex>
+                <Flex className="tab" marginTop='13'>
+                    <Tabs position="relative" variant="unstyled" onChange={handleTabsChange} index={tabIndex}>
+                        <TabList gap='24' className='text-purple-300 font-bold' fontFamily='cursive'>
+                            <Link href="/">
+                                <Tab>
+                                    <p>Home</p>
+                                </Tab>
+                            </Link>
+                            <Link href="/tokens">
+                                <Tab>
+                                    <p>Tokens</p>
+                                </Tab>
+                            </Link>
+                            <Tab>Auction</Tab>
+                        </TabList>
+                        <TabIndicator
+                            mt="-5px"
+                            height="1.5px"
+                            bg="pink.800"
+                            borderRadius="2px"
+                        />
+                    </Tabs>
+                </Flex>
+                <Spacer />
+                <Flex>
+                    <Button colorScheme='red' variant='outline' onClick={handleWalletConnection} marginTop={4} marginRight={3}>
+                        {account ? `Disconnect ${account.substring(0, 6)}...` : 'Connect Wallet 🔗'}
+                    </Button>
+                </Flex>
             </Flex>
-            <Flex className="tab" justify='center' marginTop='13'>
-                <Tabs position="relative" variant="unstyled">
-                    <TabList gap='14' className='text-purple-300 font-bold' fontFamily='cursive'>
-                        <Tab>Home</Tab>
-                        <Tab>Tokens</Tab>
-                        <Tab>Auction</Tab>
-                    </TabList>
-                    <TabIndicator
-                        mt="-5px"
-                        height="1.5px"
-                        bg="pink.800"
-                        borderRadius="2px"
-                    />
-                    <TabPanels>
-                        {/* 1st tab panel */}
-                        <TabPanel>
-                        </TabPanel>
-                        {/* 2nd tab panel */}
-                        <TabPanel>
-                        </TabPanel>
-                        {/* 3rd tab panel */}
-                        <TabPanel>
-                        </TabPanel>
-                    </TabPanels>
-                </Tabs>
-            </Flex>
-            <Spacer />
-            <Flex margin={4}>
-                <Button colorScheme='red' variant='outline' onClick={handleWalletConnection}>
-                    {account ? `Disconnect ${account.substring(0, 6)}...` : 'Connect Wallet 🔗'}
-                </Button>
-            </Flex>
-        </Flex>
+        </nav>
     );
 };
 
