@@ -7,7 +7,6 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 contract NexToken is ERC20, Ownable {
     constructor() ERC20("Nexbizn", "NEX") Ownable(msg.sender) {}
 
-
     // Mint tokens
     function buyToken(address to, uint amount) external {
         require (amount > 0, "You need to mint at least 1 token");
