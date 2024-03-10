@@ -42,14 +42,15 @@ const Navbar = () => {
     return (
         <nav className='bg-[#201629]'>
             <Flex direction={'row'}>
-                <Flex className="logo" justify='center' marginRight='81'>
+                <Flex className="logo" justify='center'>
                     <Image 
                         src="/logo.png" 
                         alt="NexBizn"
-                        width={130}
-                        height={70} 
+                        width={150}
+                        height={71} 
                         />
                 </Flex>
+                <Spacer />
                 <Flex className="tab" marginTop='13'>
                     <Tabs position="relative" variant="unstyled" onChange={handleTabsChange} index={tabIndex}>
                         <TabList gap='24' className='text-purple-300 font-bold' fontFamily='cursive'>
@@ -73,9 +74,8 @@ const Navbar = () => {
                         />
                     </Tabs>
                 </Flex>
-                <Spacer />
                 <Flex>
-                    <Button colorScheme='red' variant='outline' onClick={handleWalletConnection} marginTop={4} marginRight={3}>
+                    <Button colorScheme='red' variant='outline' onClick={handleWalletConnection} marginTop={4} marginRight={3} marginLeft={32}>
                         {account ? `Disconnect ${account.substring(0, 6)}...` : 'Connect Wallet 🔗'}
                     </Button>
                 </Flex>
