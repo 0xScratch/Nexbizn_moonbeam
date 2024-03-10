@@ -30,6 +30,8 @@ const Navbar = () => {
         setTabIndex(Number(savedTabIndex));
         }
     }, []);
+
+    // TODO: Fix that tab change functionality!
         
     const handleTabsChange = (index) => {
         localStorage.setItem('tabIndex', index);

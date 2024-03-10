@@ -4,21 +4,24 @@ import BuyToken from "./tokenComponents/BuyToken"
 import SellToken from "./tokenComponents/SellToken"
 import { Flex, Spacer } from "@chakra-ui/react"
 import Balance from "./tokenComponents/Balance"
-import { useEthers } from "@usedapp/core"
-import NexToken from './tokenComponents/NexToken.json'
+import { useEthers, MoonbaseAlpha, useContractFunction } from "@usedapp/core"
+import NexToken from '../contracts-data/NexToken.json'
+import Auction from '../contracts-data/Auction.json'
 import { Contract } from "ethers"
 
-const tokenAddress = '0x0E6F513B2DfE36A3d922Db804f3568669679d911'
+const { tokenAddress, auctionAddress } = require('../contracts-data/addresses.json')
 
 export default function Token() {
-    const contract = new Contract(tokenAddress, NexToken.abi)
-    const { account } = useEthers()
+    const tokenContract = new Contract(tokenAddress, NexToken.abi)
+    const auctionContract = new Contract(auctionAddress, Auction.abi)
+    const { account, chainId, switchNetwork } = useEthers()
     return (
         <main className="">
-            <Balance contract={contract} account={account}/>
+            <Balance contract={tokenContract} account={account}/>
             <Flex gap={52} justify='center'>
-                <BuyToken/>
-                <SellToken/>
+                <BuyToken contract={auctionContract} account={account} MoonbaseAlpha={MoonbaseAlpha} useContractFunction={useContractFunction} chainId={chainId} switchNetwork={switchNetwork}/>
+                
+                <SellToken contract={auctionContract} account={account} MoonbaseAlpha={MoonbaseAlpha} useContractFunction={useContractFunction} chainId={chainId} switchNetwork={switchNetwork}/>
             </Flex>
         </main>
     )

@@ -19,10 +19,4 @@ contract NexToken is ERC20, Ownable {
         require(balanceOf(to) >= amount, "Not enough tokens to sell");
         _burn(to, amount);
     }
-
-    function burnToken(address to, uint amount) external {
-        require(amount > 0, "You need to burn at least 1 token");
-        require(balanceOf(to) >= amount, "Not enough tokens to sell");
-        _burn(to, amount);  
-    }
 }

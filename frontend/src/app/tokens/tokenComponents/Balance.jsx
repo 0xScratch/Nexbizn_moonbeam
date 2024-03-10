@@ -15,11 +15,13 @@ const Balance = ({contract, account}) => {
         return () => debouncedUpdate.cancel()
     }, [account])
 
-    const balanceOf = useCall({ contract, method: 'balanceOf', args: [debouncedAccount] })
+    const balanceOf = useCall({ contract, method: 'balanceOf', args: [account] })
+    // console.log(balanceOf)
     
     const formattedBalance = balanceOf && balanceOf.value ? parseFloat(utils.formatEther(balanceOf.value.toString())).toFixed(0) : '??';
 
     console.log(formattedBalance)
+
     
     const balanceData = [
         { label: 'Balance:', value: `${formattedBalance} NEX`, color: 'teal.700' },

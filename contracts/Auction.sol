@@ -5,7 +5,6 @@ pragma solidity ^0.8.20;
 interface tokenContract {
     function buyToken(address to, uint amount) external;
     function sellToken(address to, uint amount) external;
-    function burnToken(address to, uint amount) external;
 }
 
 // interface for NexNFT.sol
@@ -49,11 +48,11 @@ contract Auction {
     // buying and selling of tokens
     function purchaseTokens(uint amount) public payable {
         require(msg.value >= price * amount, "Not enough ether sent");
-        nexToken.buyToken(msg.sender, amount);
+        nexToken.buyToken(msg.sender, amount * 1 ether);
     } 
 
     function sellTokens(uint amount) public {
-        nexToken.sellToken(msg.sender, amount);
+        nexToken.sellToken(msg.sender, amount * 1 ether);
         payable(msg.sender).transfer(price * amount);
     }
 
@@ -76,7 +75,7 @@ contract Auction {
         require(highestBid != 0);
 
         // burn tokens
-        nexToken.burnToken(msg.sender, highestBid);
+        nexToken.sellToken(msg.sender, highestBid * 1 ether);
         
         uint i;
         uint parcLength = participants.length;
