@@ -9,6 +9,7 @@ const { auctionAddress } = require('./addresses.json');
 
 
 const AuctionHandler = () => {
+  const [currentWinner, setCurrentWinner] = useState(''); // [1]
   const [tokens, setTokens] = useState(0);
   const [baseBid, setBaseBid] = useState(10);
   const [highestBid, setHighestBid] = useState(0);
@@ -50,6 +51,7 @@ const AuctionHandler = () => {
       }, 1000);
       return () => clearTimeout(timerId);
     } else {
+      setCurrentWinner(localStorage.getItem('currentWinner'));
       setIsOpen(true);
     }
   }, [countdown]);
@@ -119,7 +121,7 @@ const AuctionHandler = () => {
           <ModalCloseButton />
           <ModalBody>
             <Text>The auction has ended. The highest bid was {highestBid} DEV.</Text>
-            {account === localStorage.getItem('currentWinner') && (
+            {currentWinner && (
               <Button colorScheme="blue" onClick={handleMint}>Mint NFT</Button>
             )}
           </ModalBody>
