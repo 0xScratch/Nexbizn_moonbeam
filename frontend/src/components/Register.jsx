@@ -42,7 +42,7 @@ const HomePage = () => {
   const isMining = state?.status === 'Mining';
 
   return (
-    <Box h="100vh" display="flex">
+    <Box h="80vh" display="flex">
       <Box p={8} flex="1">
         <Heading as="h1" size="2xl" color="white" fontWeight="bold">
           OWN YOUR BRAND&apos;S DIGITAL LEGACY!
@@ -72,7 +72,7 @@ const HomePage = () => {
             marginTop={5}
             onClick={handleRegister}
           >
-            Register your Spot
+            Register your Spot!!
           </Button>
         </Box>
       </Box>

@@ -64,7 +64,11 @@ const Navbar = () => {
                                     <p>Tokens</p>
                                 </Tab>
                             </Link>
-                            <Tab>Auction</Tab>
+                            <Link href="/auction">
+                                <Tab>
+                                    <p>Auction</p>
+                                </Tab>
+                            </Link>
                         </TabList>
                         <TabIndicator
                             mt="-5px"
