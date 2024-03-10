@@ -2,21 +2,28 @@
 'use client'
 
 import { ChakraProvider } from '@chakra-ui/react'
-import { DAppProvider, MoonbaseAlpha } from '@usedapp/core';
+import { DAppProvider, MoonbaseAlpha, Localhost } from '@usedapp/core';
 import { getDefaultProvider } from 'ethers';
 
-const config = {
-  readOnlyChainId: MoonbaseAlpha.chainId,
+// const config = {
+//   readOnlyChainId: MoonbaseAlpha.chainId,
+//   readOnlyUrls: {
+//     [MoonbaseAlpha.chainId]: getDefaultProvider(
+//       'https://rpc.api.moonbase.moonbeam.network'
+//     ),
+//   },
+// };
+
+const hardhatConfig = {
+  readOnlyChainId: Localhost.chainId,
   readOnlyUrls: {
-    [MoonbaseAlpha.chainId]: getDefaultProvider(
-      'https://rpc.api.moonbase.moonbeam.network'
-    ),
+    [Localhost.chainId]: 'http://127.0.0.1:8545/',
   },
 };
 
 export function Providers({ children }) {
   return (
-  <DAppProvider config={config}>
+  <DAppProvider config={hardhatConfig}>
     <ChakraProvider>
       {children}
     </ChakraProvider>
