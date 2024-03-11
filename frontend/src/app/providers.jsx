@@ -9,7 +9,7 @@ const config = {
   readOnlyChainId: MoonbaseAlpha.chainId,
   readOnlyUrls: {
     [MoonbaseAlpha.chainId]: getDefaultProvider(
-      'https://rpc.api.moonbase.moonbeam.network'
+      'https://moonbase-alpha.blastapi.io/5fbc6157-38f8-481c-a84b-5cf5c431f2bc'
     ),
   },
 };

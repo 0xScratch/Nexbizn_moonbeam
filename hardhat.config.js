@@ -9,7 +9,7 @@ module.exports = {
   solidity: "0.8.24",
   networks: {
     moonbase: {
-      url: 'https://rpc.api.moonbase.moonbeam.network',
+      url: 'https://moonbase-alpha.blastapi.io/5fbc6157-38f8-481c-a84b-5cf5c431f2bc',
       chainId: 1287,
       accounts: [privateKey]
     },
