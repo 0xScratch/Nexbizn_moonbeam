@@ -2,6 +2,12 @@
 
 ***Nexbizn*** is a platform built on **Moonbeam**, a parachain of the Polkadot blockchain, empowering brands to harness the power of NFTs for impactful marketing campaigns. It's is made up of two words ***Next*** and ***Business***
 
+## Visual Tour (Pictorial Walkthrough)
+
+!["Home Page"](/frontend/public/first.png)
+
+!["Tokens Page"](/frontend/public/second.png)
+
 ## Table of Contents
 
 - [Why Nexbizn?](#why-nexbizn)
@@ -129,7 +135,7 @@ To get started with Nexbizn, follow these steps:
 8. Finally, start the frontend:
 
     ```bash
-    pnpm start
+    pnpm run dev
     ```
 
 9. Open your browser and navigate to `http://localhost:3000` to see the app in action.
