@@ -2,6 +2,10 @@
 
 ***Nexbizn*** is a platform built on **Moonbeam**, a parachain of the Polkadot blockchain, empowering brands to harness the power of NFTs for impactful marketing campaigns. It is made up of two words ***Next*** and ***Business***
 
+## Achievements
+
+One of the winners of the ***"Polkadot Hackathon"*** held by [Encode club](https://www.encode.club). It was a great experience and I learnt a lot during this hackathon. Thanks to the team for organizing such a great event!
+
 ## Visual Tour (Pictorial Walkthrough)
 
 !["Home Page"](/frontend/public/first.png)
@@ -18,7 +22,6 @@
   - [Learnings and Tips](#learnings-and-tips)
 - [Getting Started](#getting-started)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## Why Nexbizn?
 
