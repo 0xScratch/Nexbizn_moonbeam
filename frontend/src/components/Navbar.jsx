@@ -69,9 +69,9 @@ const Navbar = () => {
                                     <p>Auction</p>
                                 </Tab>
                             </Link>
-                            <Link href="https://github.com/0xScratch/Nexbizn">
+                            <Link href="https://github.com/0xScratch/Nexbizn/blob/main/README.md">
                                 <Tab>
-                                    <p>Github</p>
+                                    <p>About</p>
                                 </Tab>
                             </Link>
                         </TabList>
