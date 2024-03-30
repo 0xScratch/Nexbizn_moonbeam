@@ -1,6 +1,6 @@
 # Nexbizn: Own Your Brand's Digital Legacy
 
-***Nexbizn*** is a platform built on **Moonbeam**, a parachain of the Polkadot blockchain, empowering brands to harness the power of NFTs for impactful marketing campaigns. It's is made up of two words ***Next*** and ***Business***
+***Nexbizn*** is a platform built on **Moonbeam**, a parachain of the Polkadot blockchain, empowering brands to harness the power of NFTs for impactful marketing campaigns. It is made up of two words ***Next*** and ***Business***
 
 ## Visual Tour (Pictorial Walkthrough)
 
@@ -22,7 +22,7 @@
 
 ## Why Nexbizn?
 
-We know NFTs are everywhere, like bridging real world assets to the digital world, owning something unique and rare, and the ability to prove ownership of digital assets. But, what if we could use NFTs to create a ***Hoarding*** type of thing like it happens with all those brands we see on buildings, billboards, and other places. and they pay for it right?
+We know NFTs are everywhere, like bridging real world assets to the digital world, owning something unique and rare, and the ability to prove ownership of digital assets. But, what if we could use NFTs to create a ***Hoarding*** type of thing as it happens with all those brands we see on buildings, billboards, and other places. and they pay for it right?
 
 That's where Nexbizn comes in. Web3 brands deserve it's place, not necessarily on those physical places (if that happened more often, people be like - "Crypto took over") but on the digital world, where they can be seen by everyone, and brands could push their products and services to the people who are interested in them.
 
@@ -69,7 +69,7 @@ As it was my first hackathon, I do realised some mistakes and teachings which co
 
 - **Giving a bit more time to UI than required**: Feels like the time spent on presenting this home page good, wasn't a good path to take. Should be better focused on the functioning of dapp rather than how it looks.
 - **Trying new stuff**: It's good to try something new but remember not to just carried away. I do tried some new tools and libraries to save my time but probably it wasn't a good idea to do so (especially when you are lacking by time)
-- **Not building the auction system first**: I should have built the auction system first cuz that's the most exciting part of the platform. Maybe the procdure in my mind to built it in a organized way but that didn't worked out well. Will remember this for the next time.
+- **Not building the auction system first**: I should have built the auction system first cuz that's the most exciting part of the platform. Maybe the procedure in my mind was to built it in an organized way but that didn't worked out well. Will remember this for the next time.
 
 ### Learnings and Tips
 
