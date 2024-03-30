@@ -69,6 +69,11 @@ const Navbar = () => {
                                     <p>Auction</p>
                                 </Tab>
                             </Link>
+                            <Link href="https://github.com/0xScratch/Nexbizn">
+                                <Tab>
+                                    <p>Github</p>
+                                </Tab>
+                            </Link>
                         </TabList>
                         <TabIndicator
                             mt="-5px"
